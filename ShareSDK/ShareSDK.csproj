@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +10,19 @@
     <RootNamespace>ShareSDK</RootNamespace>
     <AssemblyName>ShareSDK</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>ShareSDK_Xamarin.iOS</PackageId>
+    <PackageVersion>4.2.1</PackageVersion>
+    <Authors>WenfengCheng</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Owners>WenfengCheng, Funky_Xamarin</Owners>
+    <PackageProjectUrl>https://github.com/Wenfengcheng/ShareSDK_Xamarin.iOS</PackageProjectUrl>
+    <PackageReleaseNotes>Release ShareSDK_Xamarin.iOS 4.2.1</PackageReleaseNotes>
+    <Summary>Xamarin.iOS Binding Library - ShareSDK</Summary>
+    <PackageTags>Xamarin.iOS,  Xamarin, ShareSDK, Share</PackageTags>
+    <Title>Funky - ShareSDK</Title>
+    <Description>Xamarin.iOS.ShareSDK</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -95,6 +109,8 @@
     <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white_highlighted%402x.png" />
     <BundleResource Include="Resources\WeiboSDK.bundle\images\empty_failed%402x.png" />
     <BundleResource Include="Resources\WeiboSDK.bundle\others\mfp.cer" />
+    <BundleResource Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>
