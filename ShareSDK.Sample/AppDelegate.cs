@@ -22,13 +22,14 @@ namespace ShareSDK.Sample
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 
-            ShareSDK.RegistPlatforms((platformsRegister)=>{
+            ShareSDK.RegistPlatforms((platformsRegister) =>
+            {
                 platformsRegister.SetupQQWithAppId("100371282", "aed9b0303e3ed1e27bae87c33761161d");
                 platformsRegister.SetupWeChatWithAppId("wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1");
                 platformsRegister.SetupSinaWeiboWithAppkey("568898243", "38a4f8204cc784f81f9f0daaf31e02e3", "http://www.sharesdk.cn");
+                //Facebook
+                platformsRegister.SetupFacebookWithAppkey("1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
             });
-
-
             return true;
         }
 

@@ -130,5 +130,7 @@
 			<string>Editor</string>
 		</dict>
 	</array>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
 </dict>
 </plist>

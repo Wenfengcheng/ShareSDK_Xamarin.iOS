@@ -17,11 +17,11 @@ namespace ShareSDK
 
         // -(void)SSDKSetupShareParamsByText:(NSString *)text images:(id)images url:(NSURL *)url title:(NSString *)title type:(SSDKContentType)type;
         [Export("SSDKSetupShareParamsByText:images:url:title:type:")]
-        void SSDKSetupShareParamsByText(string text, NSObject images, NSUrl url, string title, SSDKContentType type);
+        void SSDKSetupShareParamsByText(string text, [NullAllowed]NSObject images, [NullAllowed]NSUrl url, [NullAllowed]string title, SSDKContentType type);
 
         // -(void)SSDKSetupWeChatParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url thumbImage:(id)thumbImage image:(id)image musicFileURL:(NSURL *)musicFileURL extInfo:(NSString *)extInfo fileData:(id)fileData emoticonData:(id)emoticonData sourceFileExtension:(NSString *)fileExtension sourceFileData:(id)sourceFileData type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatParamsByText:title:url:thumbImage:image:musicFileURL:extInfo:fileData:emoticonData:sourceFileExtension:sourceFileData:type:forPlatformSubType:")]
-        void SSDKSetupWeChatParamsByText(string text, string title, NSUrl url, NSObject thumbImage, NSObject image, NSUrl musicFileURL, string extInfo, NSObject fileData, NSObject emoticonData, string fileExtension, NSObject sourceFileData, SSDKContentType type, SSDKPlatformType platformSubType);
+        void SSDKSetupWeChatParamsByText(string text, [NullAllowed]string title, [NullAllowed]NSUrl url, [NullAllowed]NSObject thumbImage, [NullAllowed]NSObject image, [NullAllowed]NSUrl musicFileURL, [NullAllowed]string extInfo, [NullAllowed]NSObject fileData, [NullAllowed]NSObject emoticonData, [NullAllowed]string fileExtension, [NullAllowed]NSObject sourceFileData, SSDKContentType type, SSDKPlatformType platformSubType);
 
         // -(void)SSDKSetupWeChatMiniProgramShareParamsByTitle:(NSString *)title description:(NSString *)description webpageUrl:(NSURL *)webpageUrl path:(NSString *)path thumbImage:(id)thumbImage hdThumbImage:(id)hdThumbImage userName:(NSString *)userName withShareTicket:(BOOL)withShareTicket miniProgramType:(NSUInteger)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatMiniProgramShareParamsByTitle:description:webpageUrl:path:thumbImage:hdThumbImage:userName:withShareTicket:miniProgramType:forPlatformSubType:")]
@@ -29,7 +29,7 @@ namespace ShareSDK
 
         // -(void)SSDKSetupQQParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url audioFlashURL:(NSURL *)audioFlashURL videoFlashURL:(NSURL *)videoFlashURL thumbImage:(id)thumbImage images:(id)images type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupQQParamsByText:title:url:audioFlashURL:videoFlashURL:thumbImage:images:type:forPlatformSubType:")]
-        void SSDKSetupQQParamsByText(string text, string title, NSUrl url, NSUrl audioFlashURL, NSUrl videoFlashURL, NSObject thumbImage, NSObject images, SSDKContentType type, SSDKPlatformType platformSubType);
+        void SSDKSetupQQParamsByText(string text, [NullAllowed]string title, [NullAllowed]NSUrl url, [NullAllowed]NSUrl audioFlashURL, [NullAllowed]NSUrl videoFlashURL, [NullAllowed]NSObject thumbImage, [NullAllowed]NSObject images, SSDKContentType type, SSDKPlatformType platformSubType);
 
         // -(void)SSDKSetupQQParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url thumbImage:(id)thumbImage image:(id)image type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType __attribute__((deprecated("discard form v4.2.0")));
         //[Export("SSDKSetupQQParamsByText:title:url:thumbImage:image:type:forPlatformSubType:")]
@@ -37,7 +37,7 @@ namespace ShareSDK
 
         // -(void)SSDKSetupSinaWeiboShareParamsByText:(NSString *)text title:(NSString *)title images:(id)images video:(NSString *)video url:(NSURL *)url latitude:(double)latitude longitude:(double)longitude objectID:(NSString *)objectID isShareToStory:(BOOL)shareToStory type:(SSDKContentType)type;
         [Export("SSDKSetupSinaWeiboShareParamsByText:title:images:video:url:latitude:longitude:objectID:isShareToStory:type:")]
-        void SSDKSetupSinaWeiboShareParamsByText(string text, string title, NSObject images, string video, NSUrl url, double latitude, double longitude, string objectID, bool shareToStory, SSDKContentType type);
+        void SSDKSetupSinaWeiboShareParamsByText(string text, [NullAllowed]string title, [NullAllowed]NSObject images, [NullAllowed]string video, [NullAllowed]NSUrl url, double latitude, double longitude, [NullAllowed]string objectID, bool shareToStory, SSDKContentType type);
 
         // -(void)SSDKSetupFacebookParamsByText:(NSString *)text image:(id)image url:(NSURL *)url urlTitle:(NSString *)title urlName:(NSString *)urlName attachementUrl:(NSURL *)attachementUrl type:(SSDKContentType)type __attribute__((deprecated("discard form v4.2.0")));
         //[Export("SSDKSetupFacebookParamsByText:image:url:urlTitle:urlName:attachementUrl:type:")]
@@ -228,7 +228,7 @@ namespace ShareSDK
         // +(SSDKSession *)authorize:(SSDKPlatformType)platformType settings:(NSDictionary *)settings onStateChanged:(SSDKAuthorizeStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("authorize:settings:onStateChanged:")]
-        SSDKSession Authorize(SSDKPlatformType platformType, NSDictionary settings, SSDKAuthorizeStateChangedHandler stateChangedHandler);
+        SSDKSession Authorize(SSDKPlatformType platformType, [NullAllowed]NSDictionary settings, SSDKAuthorizeStateChangedHandler stateChangedHandler);
 
         // +(BOOL)hasAuthorized:(SSDKPlatformType)platformTypem;
         [Static]
@@ -264,7 +264,7 @@ namespace ShareSDK
     //@interface ShareSDK(Base)
     [Category]
     [BaseType(typeof(ShareSDK))]
-    interface Base
+    interface ShareSDK_Base
     {
         // +(NSString *)sdkVersion;
         [Static]

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareSDK", "ShareSDK\ShareS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareSDK.Sample", "ShareSDK.Sample\ShareSDK.Sample.csproj", "{99C9C67C-ABD4-48F7-84EF-77796CA68D87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareSDK.UI", "ShareSDKUI\ShareSDK.UI.csproj", "{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,17 @@ Global
 		{99C9C67C-ABD4-48F7-84EF-77796CA68D87}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{99C9C67C-ABD4-48F7-84EF-77796CA68D87}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{99C9C67C-ABD4-48F7-84EF-77796CA68D87}.Debug|iPhone.Build.0 = Debug|iPhone
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|iPhone.Build.0 = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

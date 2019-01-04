@@ -110,13 +110,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\image1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShareSDKUI\ShareSDK.UI.csproj">
+      <Project>{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}</Project>
+      <Name>ShareSDK.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShareSDK\ShareSDK.csproj">
       <Project>{9C43CFD4-372A-45AC-BE1C-DD73345A5303}</Project>
       <Name>ShareSDK</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\image1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
