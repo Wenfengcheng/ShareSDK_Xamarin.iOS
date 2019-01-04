@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C43CFD4-372A-45AC-BE1C-DD73345A5303}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ShareSDK</RootNamespace>
+    <AssemblyName>ShareSDK</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Libs\libWeChatSDK.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\libWeiboSDK.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\MOBFoundation.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\QQConnector.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\ShareSDK.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC -all_load -lz -lstdc++ -lsqlite3</LinkerFlags>
+      <Frameworks>ImageIO Photos</Frameworks>
+    </NativeReference>
+    <NativeReference Include="Libs\SinaWeiboConnector.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\TencentOpenAPI.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\WechatConnector.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+    <NativeReference Include="Libs\ShareSDKExtension.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ShareSDK.bundle\Base.lproj\ShareSDK.strings" />
+    <BundleResource Include="Resources\ShareSDK.bundle\Base.lproj\country.plist" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\NativeExt.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\ShareSDK.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\QQ.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\SinaWeibo.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\WeChat.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\en.lproj\ShareSDK.strings" />
+    <BundleResource Include="Resources\ShareSDK.bundle\en.lproj\country.plist" />
+    <BundleResource Include="Resources\ShareSDK.bundle\zh-Hans.lproj\ShareSDK.strings" />
+    <BundleResource Include="Resources\ShareSDK.bundle\zh-Hans.lproj\country.plist" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white_highlighted%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\empty_failed%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\others\mfp.cer" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>
