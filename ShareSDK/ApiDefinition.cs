@@ -217,7 +217,7 @@ namespace ShareSDK
     }
 
     // @interface ShareSDK : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "ShareSDK")]
     interface ShareSDK
     {
         // +(void)registPlatforms:(void (^)(SSDKRegister *))importHandler;
@@ -228,7 +228,7 @@ namespace ShareSDK
         // +(SSDKSession *)authorize:(SSDKPlatformType)platformType settings:(NSDictionary *)settings onStateChanged:(SSDKAuthorizeStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("authorize:settings:onStateChanged:")]
-        SSDKSession Authorize(SSDKPlatformType platformType, [NullAllowed]NSDictionary settings, SSDKAuthorizeStateChangedHandler stateChangedHandler);
+        SSDKSession Authorize(SSDKPlatformType platformType, [NullAllowed]NSDictionary settings, [NullAllowed]Action<SSDKResponseState, SSDKUser, NSError> stateChangedHandler);
 
         // +(BOOL)hasAuthorized:(SSDKPlatformType)platformTypem;
         [Static]
@@ -238,17 +238,17 @@ namespace ShareSDK
         // +(void)cancelAuthorize:(SSDKPlatformType)platformType result:(void (^)(NSError *))result;
         [Static]
         [Export("cancelAuthorize:result:")]
-        void CancelAuthorize(SSDKPlatformType platformType, Action<NSError> result);
+        void CancelAuthorize(SSDKPlatformType platformType, [NullAllowed]Action<NSError> result);
 
         // +(SSDKSession *)getUserInfo:(SSDKPlatformType)platformType onStateChanged:(SSDKGetUserStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("getUserInfo:onStateChanged:")]
-        SSDKSession GetUserInfo(SSDKPlatformType platformType, SSDKGetUserStateChangedHandler stateChangedHandler);
+        SSDKSession GetUserInfo(SSDKPlatformType platformType, [NullAllowed]Action<SSDKResponseState, SSDKUser, NSError> stateChangedHandler);
 
         // +(SSDKSession *)share:(SSDKPlatformType)platformType parameters:(NSMutableDictionary *)parameters onStateChanged:(SSDKShareStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("share:parameters:onStateChanged:")]
-        SSDKSession Share(SSDKPlatformType platformType, NSMutableDictionary parameters, SSDKShareStateChangedHandler stateChangedHandler);
+        SSDKSession Share(SSDKPlatformType platformType, NSMutableDictionary parameters, [NullAllowed]Action<SSDKResponseState, NSDictionary, SSDKContentEntity, NSError> stateChangedHandler);
 
         // +(void)registerActivePlatforms:(NSArray *)activePlatforms onImport:(SSDKImportHandler)importHandler onConfiguration:(SSDKConfigurationHandler)configurationHandler __attribute__((deprecated("Discard form v4.2.0. Use 'registPlatforms:' instead.")));
         //[Static]
@@ -284,7 +284,7 @@ namespace ShareSDK
         // +(SSDKSession *)getUserInfo:(SSDKPlatformType)platformType condition:(SSDKUserQueryCondition *)condition onStateChanged:(SSDKGetUserStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("getUserInfo:condition:onStateChanged:")]
-        SSDKSession GetUserInfo(SSDKPlatformType platformType, SSDKUserQueryCondition condition, SSDKGetUserStateChangedHandler stateChangedHandler);
+        SSDKSession GetUserInfo(SSDKPlatformType platformType, SSDKUserQueryCondition condition, [NullAllowed]Action<SSDKResponseState, SSDKUser, NSError> stateChangedHandler);
 
         // +(void)recordShareEventWithPlatform:(SSDKPlatformType)platformType eventType:(SSDKShareEventType)eventType;
         [Static]
@@ -313,7 +313,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKAuthViewStyle : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKAuthViewStyle")]
     interface SSDKAuthViewStyle
     {
         // +(void)setNavigationBarBackgroundImage:(UIImage *)image;
@@ -378,7 +378,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKContentEntity : MOBFDataModel
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKContentEntity")]
     interface SSDKContentEntity
     {
         // @property (nonatomic, strong) id cid;
@@ -403,7 +403,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKCredential : MOBFDataModel
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKCredential")]
     interface SSDKCredential
     {
         // @property (copy, nonatomic) NSString * authCode;
@@ -456,7 +456,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKImage : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKImage")]
     interface SSDKImage
     {
         // @property (nonatomic, strong) NSURL * URL;
@@ -478,16 +478,16 @@ namespace ShareSDK
 
         // -(void)getNativeImage:(void (^)(UIImage *))handler;
         [Export("getNativeImage:")]
-        void GetNativeImage(Action<UIImage> handler);
+        void GetNativeImage([NullAllowed]Action<UIImage> handler);
 
         // -(void)getNativeImageData:(void (^)(NSData *))handler;
         [Export("getNativeImageData:")]
-        void GetNativeImageData(Action<NSData> handler);
+        void GetNativeImageData([NullAllowed]Action<NSData> handler);
 
         // +(void)getImage:(NSString *)imagePath thumbImagePath:(NSString *)thumbImagePath result:(void (^)(NSData *, NSData *))handler;
         [Static]
         [Export("getImage:thumbImagePath:result:")]
-        void GetImage(string imagePath, string thumbImagePath, Action<NSData, NSData> handler);
+        void GetImage(string imagePath, string thumbImagePath, [NullAllowed]Action<NSData, NSData> handler);
 
         // +(NSData *)checkThumbImageSize:(NSData *)thumbImageData;
         [Static]
@@ -496,7 +496,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKRegister : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKRegister")]
     interface SSDKRegister
     {
         // @property (readonly, nonatomic, strong) NSMutableDictionary * platformsInfo;
@@ -641,7 +641,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKSession : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKSession")]
     interface SSDKSession
     {
         // @property (readonly, assign, nonatomic) BOOL isCancelled;
@@ -654,7 +654,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKUser : MOBFDataModel
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKUser")]
     interface SSDKUser
     {
         // @property (nonatomic) SSDKPlatformType platformType;
@@ -735,7 +735,7 @@ namespace ShareSDK
     }
 
     // @interface SSDKUserQueryCondition : MOBFDataModel
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(NSObject), Name = "SSDKUserQueryCondition")]
     interface SSDKUserQueryCondition
     {
         // @property (copy, nonatomic) NSString * uid;
@@ -755,17 +755,17 @@ namespace ShareSDK
     /// 授权状态变化回调处理器
     /// </summary>
     // typedef void(^SSDKAuthorizeStateChangedHandler) (SSDKResponseState state, SSDKUser *user, NSError *error);
-    delegate void SSDKAuthorizeStateChangedHandler(ulong state, NSObject user, NSError error);
+    //delegate void SSDKAuthorizeStateChangedHandler(SSDKResponseState state, SSDKUser user, NSError error);
 
     /// <summary>
     /// 获取用户状态变更回调处理器
     /// </summary>
     // typedef void(^SSDKGetUserStateChangedHandler) (SSDKResponseState state, SSDKUser *user, NSError *error);
-    delegate void SSDKGetUserStateChangedHandler(ulong state, NSObject user, NSError error);
+    //delegate void SSDKGetUserStateChangedHandler(SSDKResponseState state, SSDKUser user, NSError error);
 
     /// <summary>
     /// 分享内容状态变更回调处理器
     /// </summary>
     // typedef void(^SSDKShareStateChangedHandler) (SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity,  NSError *error);
-    delegate void SSDKShareStateChangedHandler(ulong state, NSDictionary userData, NSObject contentEntity, NSError error);
+    //delegate void SSDKShareStateChangedHandler(SSDKResponseState state, NSDictionary userData, SSDKContentEntity contentEntity, NSError error);
 }

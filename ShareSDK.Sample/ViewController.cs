@@ -67,21 +67,21 @@ namespace ShareSDK.Sample
                                             {
                                                     switch(state)
                                                     {
-                                                        case (ulong)SSDKResponseState.Upload:
+                                                        case SSDKResponseState.Upload:
                                                             break;
-                                                        case (ulong)SSDKResponseState.Success:
+                                                        case SSDKResponseState.Success:
                                                             UIAlertController alert = UIAlertController.Create("Share Success", null, UIAlertControllerStyle.Alert);
                                                             UIAlertAction action = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
                                                             alert.AddAction(action);
                                                             this.PresentViewController(alert, true, null);
                                                             break;
-                                                        case (ulong)SSDKResponseState.Fail:
+                                                        case SSDKResponseState.Fail:
                                                             UIAlertController alert1 = UIAlertController.Create("Share Failed", null, UIAlertControllerStyle.Alert);
                                                             UIAlertAction action1 = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
                                                             alert1.AddAction(action1);
                                                             this.PresentViewController(alert1, true, null);
                                                             break;
-                                                        case (ulong)SSDKResponseState.Cancel:
+                                                        case SSDKResponseState.Cancel:
                                                             UIAlertController alert2 = UIAlertController.Create("Share Cancel", null, UIAlertControllerStyle.Alert);
                                                             UIAlertAction action2 = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
                                                             alert2.AddAction(action2);
@@ -96,21 +96,21 @@ namespace ShareSDK.Sample
             //ShareSDK.Share( SSDKPlatformType.Wechat, shareParams,(state, userData, contentEntity, error) => {
             //    switch(state)
             //    {
-            //        case (ulong)SSDKResponseState.Upload:
+            //        case SSDKResponseState.Upload:
             //            break;
-            //        case (ulong)SSDKResponseState.Success:
+            //        case SSDKResponseState.Success:
             //            UIAlertController alert = UIAlertController.Create("Share Success", null, UIAlertControllerStyle.Alert);
             //            UIAlertAction action = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
             //            alert.AddAction(action);
             //            this.PresentViewController(alert, true, null);
             //            break;
-            //        case (ulong)SSDKResponseState.Fail:
+            //        case SSDKResponseState.Fail:
             //            UIAlertController alert1 = UIAlertController.Create("Share Failed", null, UIAlertControllerStyle.Alert);
             //            UIAlertAction action1 = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
             //            alert1.AddAction(action1);
             //            this.PresentViewController(alert1, true, null);
             //            break;
-            //        case (ulong)SSDKResponseState.Cancel:
+            //        case SSDKResponseState.Cancel:
             //            UIAlertController alert2 = UIAlertController.Create("Share Cancel", null, UIAlertControllerStyle.Alert);
             //            UIAlertAction action2 = UIAlertAction.Create("OK", UIAlertActionStyle.Default, null);
             //            alert2.AddAction(action2);

@@ -182,17 +182,17 @@ namespace ShareSDK.UI
         // +(id)showShareActionSheet:(UIView *)view customItems:(NSArray *)items shareParams:(NSMutableDictionary *)shareParams sheetConfiguration:(SSUIShareSheetConfiguration *)configuration onStateChanged:(SSUIShareStateChangedHandler)stateChangedHandler;
         [Static]
         [Export("showShareActionSheet:customItems:shareParams:sheetConfiguration:onStateChanged:")]
-        NSObject ShowShareActionSheet([NullAllowed]UIView view, [NullAllowed] NSObject[] items, NSMutableDictionary shareParams, [NullAllowed]SSUIShareSheetConfiguration configuration, SSUIShareStateChangedHandler stateChangedHandler);
+        NSObject ShowShareActionSheet([NullAllowed]UIView view, [NullAllowed] NSObject[] items, NSMutableDictionary shareParams, [NullAllowed]SSUIShareSheetConfiguration configuration, [NullAllowed]Action<SSDKResponseState, SSDKPlatformType, NSDictionary, SSDKContentEntity, NSError, bool> stateChangedHandler);
 
         // +(void)shareActionSheet:(id)sheet setEditorConfiguration:(SSUIEditorConfiguration *)configuration;
         [Static]
         [Export("shareActionSheet:setEditorConfiguration:")]
-        void ShareActionSheet(NSObject sheet, SSUIEditorConfiguration configuration);
+        void ShareActionSheet(NSObject sheet, [NullAllowed]SSUIEditorConfiguration configuration);
 
         // +(id)showShareEditor:(id)platformType otherPlatforms:(NSArray *)platformTypes shareParams:(NSMutableDictionary *)shareParams editorConfiguration:(SSUIEditorConfiguration *)configuration onStateChanged:(SSUIShareStateChangedHandler)shareStateChangedHandler;
         [Static]
         [Export("showShareEditor:otherPlatforms:shareParams:editorConfiguration:onStateChanged:")]
-        NSObject ShowShareEditor(NSObject platformType, NSObject[] platformTypes, NSMutableDictionary shareParams, SSUIEditorConfiguration configuration, SSUIShareStateChangedHandler shareStateChangedHandler);
+        NSObject ShowShareEditor(NSObject platformType, [NullAllowed]NSObject[] platformTypes, NSMutableDictionary shareParams, [NullAllowed]SSUIEditorConfiguration configuration, [NullAllowed]Action<SSDKResponseState, SSDKPlatformType, NSDictionary, SSDKContentEntity, NSError, bool> shareStateChangedHandler);
 
         // +(void)dismissShareController:(id)controller;
         [Static]
@@ -202,13 +202,8 @@ namespace ShareSDK.UI
 
     /*
      * 分享状态变更
-    typedef void (^SSUIShareStateChangedHandler) (SSDKResponseState state,
-                                                  SSDKPlatformType platformType,
-                                                  NSDictionary* userData,
-                                                  SSDKContentEntity* contentEntity,
-                                                  NSError* error,
-                                                  BOOL end);
+    typedef void (^SSUIShareStateChangedHandler) (SSDKResponseState state, SSDKPlatformType platformType, NSDictionary* userData, SSDKContentEntity* contentEntity, NSError* error, BOOL end);
     */
-    unsafe delegate void SSUIShareStateChangedHandler(ulong state, ulong platformType, NSDictionary userData, NSObject contentEntity, NSError error, bool end);
+    //unsafe delegate void SSUIShareStateChangedHandler(ulong state, ulong platformType, NSDictionary userData, NSObject contentEntity, NSError error, bool end);
 
 }
