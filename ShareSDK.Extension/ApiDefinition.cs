@@ -94,12 +94,12 @@ namespace ShareSDK.Extension
         // +(void)screenCaptureShare:(SSEScreenCaptureWillShareHandler)willShareHandler onStateChanged:(id)stateChangedHandler;
         [Static]
         [Export("screenCaptureShare:onStateChanged:")]
-        void ScreenCaptureShare(Action<SSDKImage, SSEShareHandler> willShareHandler, [NullAllowed]Action<SSDKResponseState, NSDictionary, SSDKContentEntity, NSError> stateChangedHandler);
+        void ScreenCaptureShare([NullAllowed]Action<SSDKImage, SSEShareHandler> willShareHandler, [NullAllowed]Action<SSDKResponseState, NSDictionary, SSDKContentEntity, NSError> stateChangedHandler);
 
         // +(void)beginShakeShare:(void (^)(void))beginShakeHandler onEndSake:(void (^)(void))endShakeHandler onWillShareHandler:(SSEShakeWillShareHandler)willShareHandler onStateChanged:(id)stateChangedHandler;
         [Static]
         [Export("beginShakeShare:onEndSake:onWillShareHandler:onStateChanged:")]
-        void BeginShakeShare(Action beginShakeHandler, Action endShakeHandler, Action<SSEShareHandler> willShareHandler, [NullAllowed]Action<SSDKResponseState, NSDictionary, SSDKContentEntity, NSError> stateChangedHandler);
+        void BeginShakeShare([NullAllowed]Action beginShakeHandler, [NullAllowed]Action endShakeHandler, [NullAllowed]Action<SSEShareHandler> willShareHandler, [NullAllowed]Action<SSDKResponseState, NSDictionary, SSDKContentEntity, NSError> stateChangedHandler);
 
         // +(void)endShakeShare;
         [Static]

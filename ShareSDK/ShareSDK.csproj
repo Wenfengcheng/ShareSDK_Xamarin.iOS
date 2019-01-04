@@ -75,10 +75,6 @@
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
-    <NativeReference Include="Libs\ShareSDKExtension.framework">
-      <Kind>Framework</Kind>
-      <ForceLoad>True</ForceLoad>
-    </NativeReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
