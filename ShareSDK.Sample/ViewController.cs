@@ -24,17 +24,30 @@ namespace ShareSDK.Sample
 
             button = new UIButton(UIButtonType.Custom)
             {
-                Frame = new CoreGraphics.CGRect((UIScreen.MainScreen.Bounds.Width - 100) / 2, (UIScreen.MainScreen.Bounds.Height - 100) / 2, 100, 100)
+                Frame = new CoreGraphics.CGRect((UIScreen.MainScreen.Bounds.Width - 250) / 2, (UIScreen.MainScreen.Bounds.Height - 100) / 2, 100, 100)
             };
-            button.SetTitle(ShareSDK_Base.SdkVersion, UIControlState.Normal);
+            button.SetTitle("Text", UIControlState.Normal);
             button.SetTitleColor(UIColor.White, UIControlState.Normal);
             button.TouchUpInside += (sender, e) =>
             {
                 ShareMenu();
             };
-            
-
             this.View.AddSubview(button);
+
+
+            UIButton miniProgrambutton = new UIButton(UIButtonType.Custom)
+            {
+                Frame = new CoreGraphics.CGRect((UIScreen.MainScreen.Bounds.Width + 50) / 2, (UIScreen.MainScreen.Bounds.Height - 100) / 2, 100, 100)
+            };
+            miniProgrambutton.SetTitle("Mini Program", UIControlState.Normal);
+            miniProgrambutton.SetTitleColor(UIColor.White, UIControlState.Normal);
+            miniProgrambutton.TouchUpInside += (sender, e) =>
+            {
+                ShareMiniProgram();
+            };
+            this.View.AddSubview(miniProgrambutton);
+
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -120,6 +133,24 @@ namespace ShareSDK.Sample
             //            break;
             //    }
             //});
+        }
+
+        private void ShareMiniProgram()
+        {
+            NSMutableDictionary shareParams = new NSMutableDictionary();
+
+            shareParams.SSDKSetupWeChatMiniProgramShareParamsByTitle("Mini Program",
+                                                                     "test MiniProgram",
+                                                                     NSUrl.FromString("http://mob.com"),
+                                                                     "pages/index/index",
+                                                                     new NSString("image1.jpg"),
+                                                                     new NSString("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522154322305&di=7f4bf3d0803fe8c2c66c140f0a6ea0b4&imgtype=0&src=http%3A%2F%2Fa4.topitme.com%2Fo%2F201007%2F29%2F12803876734174.jpg"),
+                                                                     "gh_afb25ac019c9",
+                                                                     true, 
+                                                                     0,
+                                                                     SSDKPlatformType.WechatSession);
+
+            ShareSDK.Share(SSDKPlatformType.WechatSession, shareParams, null);
         }
 
         public override void DidReceiveMemoryWarning()

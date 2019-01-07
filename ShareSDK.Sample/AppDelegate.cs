@@ -29,6 +29,10 @@ namespace ShareSDK.Sample
                 platformsRegister.SetupSinaWeiboWithAppkey("568898243", "38a4f8204cc784f81f9f0daaf31e02e3", "http://www.sharesdk.cn");
                 //Facebook
                 platformsRegister.SetupFacebookWithAppkey("1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
+
+                platformsRegister.SetupDingTalkWithAppId("dingoabcwtuab76wy0kyzo");
+                platformsRegister.SetupAliSocialWithAppId("2017062107540437");
+                platformsRegister.SetupDouBanWithApikey("02e2cbe5ca06de5908a863b15e149b0b", "9f1e7b4f71304f2f", "http://www.sharesdk.cn");
             });
             return true;
         }

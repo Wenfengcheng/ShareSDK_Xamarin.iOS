@@ -95,19 +95,10 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tencent100371282</string>
+				<string>QQ05FB8B52</string>
 			</array>
 			<key>CFBundleURLName</key>
 			<string>qq</string>
-		</dict>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>Qzone</string>
-			<key>CFBundleURLTypes</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>QQ060c8de5</string>
-			</array>
 		</dict>
 		<dict>
 			<key>CFBundleURLName</key>
