@@ -62,6 +62,7 @@
     <NativeReference Include="Libs\libWeiboSDK.a">
       <Kind>Static</Kind>
       <ForceLoad>True</ForceLoad>
+      <Frameworks>ImageIO Photos</Frameworks>
     </NativeReference>
     <NativeReference Include="Libs\MOBFoundation.framework">
       <Kind>Framework</Kind>
@@ -74,8 +75,8 @@
     <NativeReference Include="Libs\ShareSDK.framework">
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
-      <LinkerFlags>-ObjC -all_load -lz -lstdc++ -lsqlite3</LinkerFlags>
-      <Frameworks>ImageIO Photos</Frameworks>
+      <LinkerFlags>-ObjC -lz -lstdc++ -lsqlite3</LinkerFlags>
+      <Frameworks></Frameworks>
     </NativeReference>
     <NativeReference Include="Libs\SinaWeiboConnector.framework">
       <Kind>Framework</Kind>
