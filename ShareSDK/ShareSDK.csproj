@@ -90,6 +90,10 @@
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
+    <NativeReference Include="Libs\LinkedInConnector.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

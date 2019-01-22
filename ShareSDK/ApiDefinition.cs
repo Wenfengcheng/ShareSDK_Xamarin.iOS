@@ -17,11 +17,11 @@ namespace ShareSDK
 
         // -(void)SSDKSetupShareParamsByText:(NSString *)text images:(id)images url:(NSURL *)url title:(NSString *)title type:(SSDKContentType)type;
         [Export("SSDKSetupShareParamsByText:images:url:title:type:")]
-        void SSDKSetupShareParamsByText(string text, [NullAllowed]NSObject images, [NullAllowed]NSUrl url, [NullAllowed]string title, SSDKContentType type);
+        void SSDKSetupShareParamsByText([NullAllowed]string text, [NullAllowed]NSObject images, [NullAllowed]NSUrl url, string title, SSDKContentType type);
 
         // -(void)SSDKSetupWeChatParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url thumbImage:(id)thumbImage image:(id)image musicFileURL:(NSURL *)musicFileURL extInfo:(NSString *)extInfo fileData:(id)fileData emoticonData:(id)emoticonData sourceFileExtension:(NSString *)fileExtension sourceFileData:(id)sourceFileData type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatParamsByText:title:url:thumbImage:image:musicFileURL:extInfo:fileData:emoticonData:sourceFileExtension:sourceFileData:type:forPlatformSubType:")]
-        void SSDKSetupWeChatParamsByText(string text, [NullAllowed]string title, [NullAllowed]NSUrl url, [NullAllowed]NSObject thumbImage, [NullAllowed]NSObject image, [NullAllowed]NSUrl musicFileURL, [NullAllowed]string extInfo, [NullAllowed]NSObject fileData, [NullAllowed]NSObject emoticonData, [NullAllowed]string fileExtension, [NullAllowed]NSObject sourceFileData, SSDKContentType type, SSDKPlatformType platformSubType);
+        void SSDKSetupWeChatParamsByText([NullAllowed]string text, [NullAllowed]string title, [NullAllowed]NSUrl url, [NullAllowed]NSObject thumbImage, [NullAllowed]NSObject image, [NullAllowed]NSUrl musicFileURL, [NullAllowed]string extInfo, [NullAllowed]NSObject fileData, [NullAllowed]NSObject emoticonData, [NullAllowed]string fileExtension, [NullAllowed]NSObject sourceFileData, SSDKContentType type, SSDKPlatformType platformSubType);
 
         // -(void)SSDKSetupWeChatMiniProgramShareParamsByTitle:(NSString *)title description:(NSString *)description webpageUrl:(NSURL *)webpageUrl path:(NSString *)path thumbImage:(id)thumbImage hdThumbImage:(id)hdThumbImage userName:(NSString *)userName withShareTicket:(BOOL)withShareTicket miniProgramType:(NSUInteger)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatMiniProgramShareParamsByTitle:description:webpageUrl:path:thumbImage:hdThumbImage:userName:withShareTicket:miniProgramType:forPlatformSubType:")]
