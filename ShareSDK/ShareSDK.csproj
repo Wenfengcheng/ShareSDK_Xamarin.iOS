@@ -59,11 +59,6 @@
       <Kind>Static</Kind>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
-    <NativeReference Include="Libs\libWeiboSDK.a">
-      <Kind>Static</Kind>
-      <ForceLoad>True</ForceLoad>
-      <Frameworks>ImageIO Photos</Frameworks>
-    </NativeReference>
     <NativeReference Include="Libs\MOBFoundation.framework">
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
@@ -99,10 +94,16 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white_highlighted%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\images\empty_failed%402x.png" />
+    <BundleResource Include="Resources\WeiboSDK.bundle\others\mfp.cer" />
+    <BundleResource Include="packages.config" />
     <BundleResource Include="Resources\ShareSDK.bundle\Base.lproj\ShareSDK.strings" />
     <BundleResource Include="Resources\ShareSDK.bundle\Base.lproj\country.plist" />
     <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\NativeExt.js" />
     <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\ShareSDK.js" />
+    <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\LinkedIn.js" />
     <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\QQ.js" />
     <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\SinaWeibo.js" />
     <BundleResource Include="Resources\ShareSDK.bundle\ScriptCore\platforms\WeChat.js" />
@@ -110,11 +111,6 @@
     <BundleResource Include="Resources\ShareSDK.bundle\en.lproj\country.plist" />
     <BundleResource Include="Resources\ShareSDK.bundle\zh-Hans.lproj\ShareSDK.strings" />
     <BundleResource Include="Resources\ShareSDK.bundle\zh-Hans.lproj\country.plist" />
-    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white%402x.png" />
-    <BundleResource Include="Resources\WeiboSDK.bundle\images\common_button_white_highlighted%402x.png" />
-    <BundleResource Include="Resources\WeiboSDK.bundle\images\empty_failed%402x.png" />
-    <BundleResource Include="Resources\WeiboSDK.bundle\others\mfp.cer" />
-    <BundleResource Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />

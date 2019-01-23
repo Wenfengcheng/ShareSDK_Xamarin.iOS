@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>ShareSDK.Sample</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.highviewsoft.sharesdk</string>
+	<string>com.highviewsoft.bopoda</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -35,9 +35,9 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>MOBAppKey</key>
-	<string>28f87590985ef</string>
+	<string>299939b90b2a5</string>
 	<key>MOBAppSecret</key>
-	<string>9f2f95171c1d334e589f0f9ff29e337d</string>
+	<string>22f2868c59f568995fe8d4f081f70354</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -94,8 +94,8 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent100371282</string>
-				<string>QQ05FB8B52</string>
+				<string>tencent101544098</string>
+				<string>QQ60d70a2</string>
 			</array>
 			<key>CFBundleURLName</key>
 			<string>qq</string>
@@ -105,7 +105,7 @@
 			<string>weibo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wb568898243</string>
+				<string>wb4191165346</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -115,7 +115,7 @@
 			<string>WeChat</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx617c77c82218ea2c</string>
+				<string>wx0db2c67143877851</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -123,5 +123,48 @@
 	</array>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>weibo.cn</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+			</dict>
+			<key>sina.com.cn</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+			</dict>
+			<key>weibo.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

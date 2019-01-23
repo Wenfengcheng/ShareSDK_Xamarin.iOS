@@ -22,18 +22,18 @@ namespace ShareSDK.Sample
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 
-            ShareSDK.RegistPlatforms((platformsRegister) =>
-            {
-                platformsRegister.SetupQQWithAppId("100371282", "aed9b0303e3ed1e27bae87c33761161d");
-                platformsRegister.SetupWeChatWithAppId("wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1");
-                platformsRegister.SetupSinaWeiboWithAppkey("568898243", "38a4f8204cc784f81f9f0daaf31e02e3", "http://www.sharesdk.cn");
-                //Facebook
-                platformsRegister.SetupFacebookWithAppkey("1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
+            //ShareSDK.RegistPlatforms((platformsRegister) =>
+            //{
+            //    platformsRegister.SetupQQWithAppId("100371282", "aed9b0303e3ed1e27bae87c33761161d");
+            //    platformsRegister.SetupWeChatWithAppId("wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1");
+            //    platformsRegister.SetupSinaWeiboWithAppkey("568898243", "38a4f8204cc784f81f9f0daaf31e02e3", "http://www.sharesdk.cn");
+            //    //Facebook
+            //    platformsRegister.SetupFacebookWithAppkey("1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
 
-                platformsRegister.SetupDingTalkWithAppId("dingoabcwtuab76wy0kyzo");
-                platformsRegister.SetupAliSocialWithAppId("2017062107540437");
-                platformsRegister.SetupDouBanWithApikey("02e2cbe5ca06de5908a863b15e149b0b", "9f1e7b4f71304f2f", "http://www.sharesdk.cn");
-            });
+            //    platformsRegister.SetupDingTalkWithAppId("dingoabcwtuab76wy0kyzo");
+            //    platformsRegister.SetupAliSocialWithAppId("2017062107540437");
+            //    platformsRegister.SetupDouBanWithApikey("02e2cbe5ca06de5908a863b15e149b0b", "9f1e7b4f71304f2f", "http://www.sharesdk.cn");
+            //});
             return true;
         }
 

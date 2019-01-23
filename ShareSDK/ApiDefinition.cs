@@ -17,7 +17,7 @@ namespace ShareSDK
 
         // -(void)SSDKSetupShareParamsByText:(NSString *)text images:(id)images url:(NSURL *)url title:(NSString *)title type:(SSDKContentType)type;
         [Export("SSDKSetupShareParamsByText:images:url:title:type:")]
-        void SSDKSetupShareParamsByText([NullAllowed]string text, [NullAllowed]NSObject images, [NullAllowed]NSUrl url, string title, SSDKContentType type);
+        void SSDKSetupShareParamsByText([NullAllowed]string text, [NullAllowed]NSObject images, [NullAllowed]NSUrl url, [NullAllowed]string title, SSDKContentType type);
 
         // -(void)SSDKSetupWeChatParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url thumbImage:(id)thumbImage image:(id)image musicFileURL:(NSURL *)musicFileURL extInfo:(NSString *)extInfo fileData:(id)fileData emoticonData:(id)emoticonData sourceFileExtension:(NSString *)fileExtension sourceFileData:(id)sourceFileData type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatParamsByText:title:url:thumbImage:image:musicFileURL:extInfo:fileData:emoticonData:sourceFileExtension:sourceFileData:type:forPlatformSubType:")]

@@ -23,6 +23,7 @@ namespace ShareSDK.Sample
 
             this.Title = "Black Page";
             this.View.BackgroundColor = UIColor.Black;
+            Console.WriteLine(ShareSDK_Base.SdkVersion);
 
             button = new UIButton(UIButtonType.Custom)
             {
@@ -71,25 +72,30 @@ namespace ShareSDK.Sample
             NSMutableDictionary shareParams = new NSMutableDictionary();
 
             shareParams.SSDKSetupShareParamsByText("Test Share", 
-                                                   UIImage.FromFile("image1.jpg"), 
-                                                   NSUrl.FromString("https://www.mob.com"), 
-                                                   "Test Share Title", 
-                                                   SSDKContentType.Auto);
-
+                                                   null, 
+                                                   NSUrl.FromString("https://www.microsoft.com"),
+                                                   "Test Share", 
+                                                   SSDKContentType.WebPage);
+                                                 
             List<NSObject> items = new List<NSObject>()
             {
                 NSNumber.FromUInt64((ulong)SSDKPlatformType.QQ),
                 NSNumber.FromUInt64((ulong)SSDKPlatformType.Wechat),
                 NSNumber.FromUInt64((ulong)SSDKPlatformType.SinaWeibo),
-                NSNumber.FromUInt64((ulong)SSDKPlatformType.SMS),
-                NSNumber.FromUInt64((ulong)SSDKPlatformType.Mail),
+                NSNumber.FromUInt64((ulong)SSDKPlatformType.LinkedIn),
                 NSNumber.FromUInt64((ulong)SSDKPlatformType.Copy),
             };
 
+            SSUIShareSheetConfiguration configuration = new SSUIShareSheetConfiguration()
+            {
+                Style = SSUIActionSheetStyle.Simple,
+                DirectSharePlatforms = items.ToArray()
+            };
+
             ShareSDKHelper.Instance.ShowShareActionSheet(view:null,
-                                                items: items.ToArray(),
+                                                         items: items.ToArray(),
                                                 shareParams:shareParams,
-                                                configuration:null,
+                                                configuration: configuration,
                                              stateChangedHandler: (state, platformType, userData, contentEntity, error, end) =>
                                             {
                                                     switch(state)
@@ -181,7 +187,7 @@ namespace ShareSDK.Sample
                                                     "-----------",
                                                     null,
                                                     new NSString("image1.jpg"),
-                                                    image,
+                                                    UIImage.FromFile("image1.jpg"),
                                                     null,
                                                     null,
                                                     null,
