@@ -25,7 +25,7 @@ namespace ShareSDK
 
         // -(void)SSDKSetupWeChatMiniProgramShareParamsByTitle:(NSString *)title description:(NSString *)description webpageUrl:(NSURL *)webpageUrl path:(NSString *)path thumbImage:(id)thumbImage hdThumbImage:(id)hdThumbImage userName:(NSString *)userName withShareTicket:(BOOL)withShareTicket miniProgramType:(NSUInteger)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupWeChatMiniProgramShareParamsByTitle:description:webpageUrl:path:thumbImage:hdThumbImage:userName:withShareTicket:miniProgramType:forPlatformSubType:")]
-        void SSDKSetupWeChatMiniProgramShareParamsByTitle(string title, string description, NSUrl webpageUrl, string path, NSObject thumbImage, NSObject hdThumbImage, string userName, bool withShareTicket, nuint type, SSDKPlatformType platformSubType);
+        void SSDKSetupWeChatMiniProgramShareParamsByTitle(string title, [NullAllowed]string description, NSUrl webpageUrl, string path, [NullAllowed]NSObject thumbImage, [NullAllowed]NSObject hdThumbImage, string userName, bool withShareTicket, nuint type, SSDKPlatformType platformSubType);
 
         // -(void)SSDKSetupQQParamsByText:(NSString *)text title:(NSString *)title url:(NSURL *)url audioFlashURL:(NSURL *)audioFlashURL videoFlashURL:(NSURL *)videoFlashURL thumbImage:(id)thumbImage images:(id)images type:(SSDKContentType)type forPlatformSubType:(SSDKPlatformType)platformSubType;
         [Export("SSDKSetupQQParamsByText:title:url:audioFlashURL:videoFlashURL:thumbImage:images:type:forPlatformSubType:")]

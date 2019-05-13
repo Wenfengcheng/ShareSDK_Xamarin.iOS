@@ -28,5 +28,31 @@ namespace ShareSDK.Sample.Helper
                 return null;
             }
         }
+
+        public static async Task<Stream> LoadImageStream(string imageUrl)
+        {
+            Stream imageStream = null;
+            try
+            {
+                if (string.IsNullOrEmpty(imageUrl)) 
+                {
+                    return imageStream;
+                }
+                else if(imageUrl.Substring(0, 4) == "http")
+                {
+                    imageStream = await ImageService.Instance.LoadUrl(imageUrl, TimeSpan.FromDays(300)).AsJPGStreamAsync(100);
+                }
+                else 
+                {
+                    imageStream = await ImageService.Instance.LoadFile(imageUrl).AsJPGStreamAsync(100);
+                }
+                return imageStream;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }

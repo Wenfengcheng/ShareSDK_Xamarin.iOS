@@ -116,6 +116,12 @@
     <Reference Include="FFImageLoading.Forms.Platform">
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.4.859\lib\Xamarin.iOS10\FFImageLoading.Forms.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="ShareSDKUI">
+      <HintPath>..\ShareSDKUI\bin\Debug\ShareSDKUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ShareSDK">
+      <HintPath>..\ShareSDKUI\bin\Debug\ShareSDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -146,16 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShareSDKUI\ShareSDK.UI.csproj">
-      <Project>{3FB46ECB-A1C4-4A7D-962B-67E3E1DE6F7E}</Project>
-      <Name>ShareSDK.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ShareSDK\ShareSDK.csproj">
-      <Project>{9C43CFD4-372A-45AC-BE1C-DD73345A5303}</Project>
-      <Name>ShareSDK</Name>
-    </ProjectReference>
+    <BundleResource Include="Resources\album%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets')" />
